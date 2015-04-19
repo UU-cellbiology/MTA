@@ -5,9 +5,14 @@ Multiscale Trend Analysis
 
 Matlab code performing multiscale trend analysis based on piecewise linear approximations of time series according to the paper "<a href="http://arxiv.org/pdf/physics/0305013.pdf">Multiscale Trend Analysis</a>" by I.Zaliapin, A.Gabrielov, V.Keilis-Borok. 
 <br />
-There are some distinction in this realization, check the code! 
 <br />
-To start, run and explore 'mta_example.m'
+Here is <a href="http://katpyxa.info/feedbacks/?p=73">my blog</a> post with some details.
+<br />
+<br />
+To start, run and explore 'mta_example.m'.
+<br />
+<br />
+There are some distinction in this realization comparing to the paper, check the code! 
 <br />
 <br />
 <hr />
