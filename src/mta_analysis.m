@@ -2,7 +2,7 @@
     % according to paper I.Zaliapin et al. Fractals 12. N3 (2004)
     % realization is written by Eugene Katrukha / katpyxa @ gmail.com
     % feel free to write for any comments/mistakes/etc
-    % version 1.0.0
+    % version 1.0.1
 
     %as an input requires 
     % 1) two column (x and y) array containing function series (required)
@@ -17,14 +17,14 @@
 
     %output
     % 1)optimal_epoches - array containing indexes of original array,
-    % corresponding to optimal 'corner points' (see Zalyapin et al. Biophysical J. 2005)
+    % corresponding to optimal 'corner point' (see Zalyapin et al. Biophysical J. 2005)
     % 2) slopes of linear approximation at those segments
     % 3) two column array containing approximation
     
     %example calls:
     %[optimal_epoches, slopes, xyApprox] = mta_analysis(xyseries)
-    %[optimal_epoches, slopes, xyApprox] = mta_analysis(xyseries, max_depth_of_tree)
-    %[optimal_epoches, slopes, xyApprox] = mta_analysis(xyseries, max_depth_of_tree, max_num_of_intervals)
+    %[optimal_epoches, slopes, xyApprox] = mta_analysis(xyseries, rel_rms_improvement)
+    %[optimal_epoches, slopes, xyApprox] = mta_analysis(xyseries, rel_rms_improvement, max_depth_of_tree, max_num_of_intervals)
     
     %also see mta_example.mat
 
@@ -123,7 +123,9 @@ function [optimal_epoches, slopes, xyApprox] = mta_analysis(varargin)
     optimal_epoches = approx_tree{opt_level,1};
     [xyApprox,slopes, b_coeff] = getapproximation(xyArr, optimal_epoches);
 
+    %uncomment following three lines to plot rms vs segments number plot
     %plot(log(segments_number), log(rms_plot), '-o');
+    %figure
     %plot(segments_number, rms_plot, '-o');
 
 end
